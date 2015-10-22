@@ -17,12 +17,20 @@ android {
         jcenter()
     }
 
+    packagingOptions {
+	    exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+                
+	}
+
     dependencies {
-        compile 'org.codehaus.groovy:groovy-all:2.4.4'
-        compile 'org.codehaus.groovy:groovy:2.4.3:grooid'
         compile 'org.apache.ivy:ivy:2.2.0'
-
-
+        compile 'com.android.support:support-v4:22.0.0'
+        compile 'org.codehaus.groovy:groovy:2.4.3:grooid'
+        compile 'org.codehaus.groovy:groovy-xml:2.4.3'
+        compile ('org.codehaus.groovy:groovy-json:2.4.3') {
+            transitive = false
+        }
     }
 
     compileSdkVersion 22
